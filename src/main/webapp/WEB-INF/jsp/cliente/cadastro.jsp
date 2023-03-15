@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro de Cliente RentGo</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-light">
 <div class="container">
-    <div class="py-5 text-center">
+    <div class="py-2 text-center">
         <h2>Cadastro de Cliente</h2>
     </div>
-    <form action="${pageContext.request.contextPath}/clientes/registrar" method="post">
+    <form action="/clientes/registrar" method="post">
         <h4 class="mb-3">Informações do cliente</h4>
             <div class="row g-3">
                 <div class="col-6">
@@ -147,7 +147,8 @@
 
             <button class="mt-5 w-100 btn btn-success btn-lg" type="submit">Cadastrar</button>
         </form>
-            <button class="mt-2 w-100 btn btn-outline-dark btn-lg" type="submit">Voltar</button>
+            <a class="mt-2 mb-2 w-100 btn btn-outline-dark btn-lg" href="/clientes/listar">Voltar</a>
 </div>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

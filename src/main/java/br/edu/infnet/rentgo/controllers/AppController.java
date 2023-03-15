@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AppController {
 
     @GetMapping(value = "/")
-    public String HomeScreen() {
-        return "index";
+    public String indexRoot() {
+        return "redirect:/login";
     }
 
-    @GetMapping(value = "/cadastro")
-    public String RegisterScreen() {
-        return "cadastro";
+    @GetMapping(value = "/home")
+    public String home() {
+        return "index";
     }
 }

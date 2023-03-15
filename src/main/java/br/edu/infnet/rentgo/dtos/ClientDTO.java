@@ -30,4 +30,108 @@ public class ClientDTO {
         this.cepForm = cepForm;
         this.verifiedForm = verifiedForm;
     }
+
+    public String getNameForm() {
+        return nameForm;
+    }
+
+    public void setNameForm(String nameForm) {
+        this.nameForm = nameForm;
+    }
+
+    public String getEmailForm() {
+        return emailForm;
+    }
+
+    public void setEmailForm(String emailForm) {
+        this.emailForm = emailForm;
+    }
+
+    public String getTelForm() {
+        return telForm;
+    }
+
+    public void setTelForm(String telForm) {
+        this.telForm = telForm;
+    }
+
+    public String getRgForm() {
+        return rgForm;
+    }
+
+    public void setRgForm(String rgForm) {
+        this.rgForm = rgForm;
+    }
+
+    public String getCpfForm() {
+        return cpfForm;
+    }
+
+    public void setCpfForm(String cpfForm) {
+        this.cpfForm = cpfForm;
+    }
+
+    public String getCnhForm() {
+        return cnhForm;
+    }
+
+    public void setCnhForm(String cnhForm) {
+        this.cnhForm = cnhForm;
+    }
+
+    public String getEndForm() {
+        return endForm;
+    }
+
+    public void setEndForm(String endForm) {
+        this.endForm = endForm;
+    }
+
+    public String getCompForm() {
+        return compForm;
+    }
+
+    public void setCompForm(String compForm) {
+        this.compForm = compForm;
+    }
+
+    public String getBairroForm() {
+        return bairroForm;
+    }
+
+    public void setBairroForm(String bairroForm) {
+        this.bairroForm = bairroForm;
+    }
+
+    public String getCidadeForm() {
+        return cidadeForm;
+    }
+
+    public void setCidadeForm(String cidadeForm) {
+        this.cidadeForm = cidadeForm;
+    }
+
+    public String getEstadoForm() {
+        return estadoForm;
+    }
+
+    public void setEstadoForm(String estadoForm) {
+        this.estadoForm = estadoForm;
+    }
+
+    public String getCepForm() {
+        return cepForm;
+    }
+
+    public void setCepForm(String cepForm) {
+        this.cepForm = cepForm;
+    }
+
+    public boolean isVerifiedForm() {
+        return verifiedForm;
+    }
+
+    public void setVerifiedForm(boolean verifiedForm) {
+        this.verifiedForm = verifiedForm;
+    }
 }
