@@ -30,6 +30,19 @@
                 <h2>RentGo Rotas</h2>
                 <p>Rotas da aplica&ccedil;&atilde;o RentGo.</p>
                 <ul class="icon-list ps-0">
+                    <li class="d-flex align-items-start mb-1"><a
+                            href="store/listar" target="_blank">Listar
+                        Lojas</a></li>
+                    <li class="d-flex align-items-start mb-1"><a
+                            href="store/registrar" target="_blank">Registrar
+                        Lojas</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h2>RentGo Rotas</h2>
+                <p>Rotas da aplica&ccedil;&atilde;o RentGo.</p>
+                <ul class="icon-list ps-0">
                     <li class="d-flex align-items-start mb-1"><a href="/"
                                                                  target="_blank">Login</a></li>
                     <li class="d-flex align-items-start mb-1"><a href="/home"
