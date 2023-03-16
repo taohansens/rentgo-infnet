@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro de Loja - RentGo</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="/jquery/jquery-3.2.1.min.js"></script>
 </head>
 <body class="bg-light">
 <div class="container">
@@ -25,6 +26,14 @@
                 </div>
 
                 <h4 class="mb-2 mt-4">Endereço do Cliente</h4>
+                <div class="col-md-3">
+                    <label for="cepForm" class="form-label">CEP<span class="text-muted"> *Apenas números</span> </label>
+                    <input type="text" class="form-control" id="cepForm" name="cepForm" placeholder="" required>
+                    <div class="invalid-feedback">
+                        CEP é obrigatório.
+                    </div>
+                </div>
+
                 <div class="col-4">
                     <label for="endForm" class="form-label">Endereço</label>
                     <input type="text" class="form-control" id="endForm" name="endForm" placeholder="Rua ABC" required>
@@ -88,14 +97,6 @@
                         Selecione o Estado.
                     </div>
                 </div>
-
-                <div class="col-md-3">
-                    <label for="cepForm" class="form-label">CEP<span class="text-muted"> *Apenas números</span> </label>
-                    <input type="text" class="form-control" id="cepForm" name="cepForm" placeholder="" required>
-                    <div class="invalid-feedback">
-                        CEP é obrigatório.
-                    </div>
-                </div>
             </div>
 
             <hr class="my-4">
@@ -109,5 +110,21 @@
             <a class="mt-2 mb-2 w-100 btn btn-outline-dark btn-lg" href="/store/listar">Voltar</a>
 </div>
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    $("#cepForm").focusout(function(){
+        $.ajax({
+            url: 'https://viacep.com.br/ws/'+$(this).val()+'/json',
+            dataType: 'json',
+            success: function(resposta){
+                $("#endForm").val(resposta.logradouro);
+                $("#complemento").val(resposta.complemento);
+                $("#bairroForm").val(resposta.bairro);
+                $("#cidadeForm").val(resposta.localidade);
+                $("#estadoForm").val(resposta.uf);
+                $("#compForm").focus();
+            }
+        });
+    });
+</script>
 </body>
 </html>

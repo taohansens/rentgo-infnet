@@ -16,13 +16,13 @@ public class StoreController {
     @Autowired
     private StoreService service;
     @GetMapping(value = "/listar")
-    public String ListClientScreen(Model model) {
+    public String ListStoreScreen(Model model) {
         model.addAttribute("stores", service.getAll());
         return "store/listar";
     }
 
     @GetMapping(value = "/registrar")
-    public String RegisterClientScreen() {
+    public String RegisterStoreScreen() {
         return "store/cadastro";
     }
 
