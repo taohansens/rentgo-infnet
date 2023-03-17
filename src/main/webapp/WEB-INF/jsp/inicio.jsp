@@ -8,12 +8,49 @@
     <link href="css/index.css" rel="stylesheet"/>
 </head>
 <body class="bg-light">
-<div class="col-lg-8 mx-auto p-4 py-md-5">
-    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-        <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
-            <span class="fs-4 fw-bold">RentGo Home</span>
-        </a>
-    </header>
+<div class="col-lg-8 mx-auto p-4 py-md-2">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">RentGo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Lojas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/store/listar">Listar</a></li>
+                            <li><a class="dropdown-item" href="/store/registrar">Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ve&iacute;culos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/vehicle/listar">Listar</a></li>
+                            <li><a class="dropdown-item" href="/vehicle/registrar">Cadastrar</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Clientes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/clientes/listar">Listar</a></li>
+                            <li><a class="dropdown-item" href="/clientes/registrar">Cadastrar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <main>
         <h1>RentGo. Reservas.</h1>
         <p class="fs-5 col-md-8">Verifique o registro de clientes por aqui.</p>
