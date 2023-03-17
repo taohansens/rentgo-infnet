@@ -1,15 +1,21 @@
 package br.edu.infnet.rentgo.entities;
 
+import br.edu.infnet.rentgo.dtos.VehicleDTO;
+
 public class Vehicle {
     private long id;
-    private long placa;
+    private String placa;
 
     public Vehicle() {
     }
 
-    public Vehicle(long id, long placa) {
+    public Vehicle(long id, String placa) {
         this.id = id;
         this.placa = placa;
+    }
+
+    public Vehicle(VehicleDTO vehicleDTO) {
+        placa = vehicleDTO.placaForm;
     }
 
     public long getId() {
@@ -20,11 +26,11 @@ public class Vehicle {
         this.id = id;
     }
 
-    public long getPlaca() {
+    public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(long placa) {
+    public void setPlaca(String placa) {
         this.placa = placa;
     }
 }

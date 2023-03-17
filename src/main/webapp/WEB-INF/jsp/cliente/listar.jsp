@@ -16,7 +16,7 @@
             <h3 class="float-md-start mb-0">RentGo - Listar Clientes</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
                 <a class="nav-link fw-bold py-1 px-0 m-2 text-black btn-link" aria-current="page"
-                   href="/home">Voltar para Home</a>
+                   href="/">Voltar para Home</a>
             </nav>
         </div>
     </header>
