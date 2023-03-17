@@ -1,9 +1,11 @@
 package br.edu.infnet.rentgo.entities;
+import br.edu.infnet.rentgo.dtos.ClientDTO;
 import br.edu.infnet.rentgo.dtos.StoreDTO;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Store {
     private long id;
@@ -25,6 +27,7 @@ public class Store {
         name = storeDTO.nameForm;
         address = new Address(storeDTO.cepForm, storeDTO.endForm, storeDTO.compForm, storeDTO.bairroForm,
                 storeDTO.cidadeForm, storeDTO.estadoForm);
+        vehicles = storeDTO.vehicleDTOS.stream().map(Vehicle::new).collect(Collectors.toSet());
     }
 
     public long getId() {
