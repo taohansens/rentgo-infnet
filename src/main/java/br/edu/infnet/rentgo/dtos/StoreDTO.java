@@ -1,13 +1,11 @@
 package br.edu.infnet.rentgo.dtos;
 
-import br.edu.infnet.rentgo.entities.Address;
-import br.edu.infnet.rentgo.entities.Vehicle;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class StoreDTO {
+    public int idForm;
     public String nameForm;
     public String endForm;
     public String compForm;
@@ -17,6 +15,9 @@ public class StoreDTO {
     public String cepForm;
     public Set<VehicleDTO> vehicleDTOS = new HashSet<>();
 
+    public StoreDTO() {
+    }
+
     public StoreDTO(String nameForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm) {
         this.nameForm = nameForm;
         this.endForm = endForm;
@@ -25,6 +26,26 @@ public class StoreDTO {
         this.cidadeForm = cidadeForm;
         this.estadoForm = estadoForm;
         this.cepForm = cepForm;
+    }
+
+    public StoreDTO(int idForm, String nameForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm) {
+        this.idForm = idForm;
+        this.nameForm = nameForm;
+        this.endForm = endForm;
+        this.compForm = compForm;
+        this.bairroForm = bairroForm;
+        this.cidadeForm = cidadeForm;
+        this.estadoForm = estadoForm;
+        this.cepForm = cepForm;
+        this.vehicleDTOS = vehicleDTOS;
+    }
+
+    public int getIdForm() {
+        return idForm;
+    }
+
+    public void setIdForm(int idForm) {
+        this.idForm = idForm;
     }
 
     public String getNameForm() {

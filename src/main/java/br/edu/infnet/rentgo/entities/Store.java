@@ -1,5 +1,4 @@
 package br.edu.infnet.rentgo.entities;
-import br.edu.infnet.rentgo.dtos.ClientDTO;
 import br.edu.infnet.rentgo.dtos.StoreDTO;
 
 import java.util.HashSet;
@@ -8,7 +7,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Store {
-    private long id;
+    private Integer id;
     private String name;
     private Address address;
     private Set<Vehicle> vehicles = new HashSet<>();
@@ -16,7 +15,7 @@ public class Store {
     public Store() {
     }
 
-    public Store(long id, String name, Address address, Set<Vehicle> vehicles) {
+    public Store(Integer id, String name, Address address, Set<Vehicle> vehicles) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -30,11 +29,11 @@ public class Store {
         vehicles = storeDTO.vehicleDTOS.stream().map(Vehicle::new).collect(Collectors.toSet());
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

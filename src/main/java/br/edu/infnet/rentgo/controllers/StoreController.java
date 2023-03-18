@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,10 +31,17 @@ public class StoreController {
     public String insert(StoreDTO storeDTO) {
         boolean status = service.insert(storeDTO);
         if(status) {
-            System.out.printf("Cliente %s adicionado", storeDTO.nameForm);
+            System.out.printf("Loja %s adicionado", storeDTO.nameForm);
         } else {
             System.out.printf("Erro ao adicionar %s", storeDTO.nameForm);
         }
+        return "redirect:/store/listar";
+    }
+
+    @GetMapping(value = "/{id}/delete")
+    public String delete(@PathVariable int id) {
+        StoreDTO storeDTO = service.delete(id);
+        System.out.printf("[204] Loja %s excluido com sucesso.", storeDTO.nameForm);
         return "redirect:/store/listar";
     }
 }

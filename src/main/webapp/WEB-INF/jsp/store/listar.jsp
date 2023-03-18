@@ -29,6 +29,7 @@
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Endereço</th>
                 <th>Complemento</th>
@@ -42,6 +43,7 @@
 
             <c:forEach var="store" items="${stores}">
                 <tr>
+                    <td>${store.idForm}</td>
                     <td>${store.nameForm}</td>
                     <td>${store.endForm}</td>
                     <td>${store.compForm}</td>
@@ -49,6 +51,7 @@
                     <td>${store.cidadeForm}</td>
                     <td>${store.estadoForm}</td>
                     <td>${store.cepForm}</td>
+                    <td><a href="/store/${store.idForm}/delete">Excluir</a></td>
                 </tr>
             </c:forEach>
             </tbody>
