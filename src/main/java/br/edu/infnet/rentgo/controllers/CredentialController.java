@@ -3,28 +3,35 @@ package br.edu.infnet.rentgo.controllers;
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
 import br.edu.infnet.rentgo.services.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@SessionAttributes("userLogged")
 @RequestMapping("/usuarios")
 public class CredentialController {
     public String msg;
     @Autowired
     private CredentialService service;
 
+    @GetMapping(value = "/login")
+    public String Login() {
+        return "/users/login";
+    }
+
     @PostMapping(value = "/login")
     public String autenticar(Model model, CredentialUserDTO credentialUserDTO) {
-        boolean logged = service.login(credentialUserDTO);
-        if (logged) {
-            System.out.println("Logado com sucesso. " + credentialUserDTO.emailForm);
+        CredentialUserDTO userLogged = service.login(credentialUserDTO);
+        if (userLogged != null) {
+            model.addAttribute("userLogged", userLogged);
+            System.out.println("Logado com sucesso. " + userLogged.emailForm);
             return "redirect:/";
-        } else {
-            System.out.println("Credenciais incorretas para o email " + credentialUserDTO.emailForm);
-            return "redirect:/login";
         }
+        System.out.println("Credenciais incorretas para o email " + credentialUserDTO.emailForm);
+        model.addAttribute("mensagem", "Credenciais incorretas para o email " + credentialUserDTO.emailForm);
+        return "users/login";
+
     }
 
     @GetMapping(value = "/listar")
@@ -35,7 +42,7 @@ public class CredentialController {
 
     @GetMapping(value = "/registrar")
     public String RegisterClientScreen() {
-        return "users/cadastro";
+        return "users/register";
     }
 
     @PostMapping(value = "/registrar")

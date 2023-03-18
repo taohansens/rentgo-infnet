@@ -14,8 +14,8 @@
 <main class="form-signin w-100 m-auto">
     <h1>RentGo</h1>
     <h1 class="h3 mb-3 fw-normal">Faça o login.</h1>
-    <c:if test="${not empty msg}">
-        <div class="alert alert-danger" role="alert">${msg}</div>
+    <c:if test="${not empty mensagem}">
+        <div class="alert alert-danger" role="alert">${mensagem}</div>
     </c:if>
     <form action="/usuarios/login" method="post">
         <div class="form-floating">

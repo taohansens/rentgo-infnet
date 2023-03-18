@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom mb-5">
     <div class="container-fluid">
             <a class="navbar-brand" href="/">RentGo</a>
@@ -9,6 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <div>
                 <ul class="navbar-nav">
+                    <c:if test="${not empty userLogged}">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
@@ -46,22 +48,26 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/usuarios/listar">Listar</a></li>
-                            <li><a class="dropdown-item" href="/usuarios/registrar">Cadastrar</a></li>
                         </ul>
                     </li>
+                    </c:if>
                 </ul>
             </div>
         <div class="nav-right">
             <ul class="navbar-nav">
+                <c:if test="${empty userLogged}">
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/register">Sign Up</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/login">Login</a>
             </li>
+                </c:if>
+                <c:if test="${not empty userLogged}">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Logout</a>
+                <a class="nav-link" aria-current="page" href="#">Logout, ${userLogged.emailForm}</a>
             </li>
+                </c:if>
             </ul>
         </div>
     </div>

@@ -12,11 +12,11 @@ public class AppController {
 
     @GetMapping(value = "/register")
     public String Register() {
-        return "register";
+        return "redirect:/usuarios/registrar";
     }
 
     @GetMapping(value = "/login")
     public String Login() {
-        return "login";
+        return "redirect:/usuarios/login";
     }
 }

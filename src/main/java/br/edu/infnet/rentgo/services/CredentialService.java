@@ -14,9 +14,13 @@ public class CredentialService {
     @Autowired
     private CredentialRepository repository;
 
-    public boolean login(CredentialUserDTO credentialUserDTO) {
+    public CredentialUserDTO login(CredentialUserDTO credentialUserDTO) {
         CredentialUser credentialUser = new CredentialUser(credentialUserDTO);
-        return repository.login(credentialUser);
+        CredentialUser loggedUser = repository.login(credentialUser);
+        if(loggedUser != null) {
+            return new CredentialUserDTO(loggedUser.getId(), loggedUser.getEmail(), "******");
+        }
+        return null;
     }
 
     public boolean insert(CredentialUserDTO credentialUserDTO) {
@@ -26,11 +30,11 @@ public class CredentialService {
 
     public List<CredentialUserDTO> getAll() {
         Collection<CredentialUser> list = repository.getAll();
-        return list.stream().map(x -> new CredentialUserDTO(x.getId(), x.getEmail(), x.getPassword())).toList();
+        return list.stream().map(x -> new CredentialUserDTO(x.getId(), x.getEmail(), "******")).toList();
     }
 
     public CredentialUserDTO delete(int id) {
         CredentialUser user = repository.delete(id);
-        return new CredentialUserDTO(user.getId(), user.getEmail(), user.getPassword());
+        return new CredentialUserDTO(user.getId(), user.getEmail(), "******");
     }
 }

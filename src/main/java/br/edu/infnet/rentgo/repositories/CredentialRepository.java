@@ -28,12 +28,12 @@ public class CredentialRepository {
         return mapCredentialUser.remove(key);
     }
 
-    public boolean login(CredentialUser credentialUser) {
+    public CredentialUser login(CredentialUser credentialUser) {
         for (CredentialUser c : mapCredentialUser.values().stream().toList()){
             if(Objects.equals(c.getEmail(), credentialUser.getEmail()) &&
                     Objects.equals(c.getPassword(), credentialUser.getPassword())) {
-                return true;}
+                return c;}
         }
-        return false;
+        return null;
     }
 }
