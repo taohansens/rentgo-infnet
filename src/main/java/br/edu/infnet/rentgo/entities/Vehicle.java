@@ -3,13 +3,13 @@ package br.edu.infnet.rentgo.entities;
 import br.edu.infnet.rentgo.dtos.VehicleDTO;
 
 public class Vehicle {
-    private long id;
+    private Integer id;
     private String placa;
 
     public Vehicle() {
     }
 
-    public Vehicle(long id, String placa) {
+    public Vehicle(Integer id, String placa) {
         this.id = id;
         this.placa = placa;
     }
@@ -18,11 +18,11 @@ public class Vehicle {
         placa = vehicleDTO.placaForm;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

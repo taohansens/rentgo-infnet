@@ -29,6 +29,7 @@
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <tr>
+                <th>ID</th>
                 <th>Placa</th>
             </tr>
             </thead>
@@ -36,7 +37,9 @@
 
             <c:forEach var="vehicle" items="${vehicles}">
                 <tr>
+                    <td>${vehicle.idForm}</td>
                     <td>${vehicle.placaForm}</td>
+                    <td><a href="/vehicle/${vehicle.idForm}/delete">Excluir</a></td>
                 </tr>
             </c:forEach>
             </tbody>
