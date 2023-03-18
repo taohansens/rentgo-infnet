@@ -1,6 +1,7 @@
 package br.edu.infnet.rentgo.dtos;
 
 public class ClientDTO {
+    public int idForm;
     public String nameForm;
     public String emailForm;
     public String telForm;
@@ -14,6 +15,26 @@ public class ClientDTO {
     public String estadoForm;
     public String cepForm;
     public boolean verifiedForm;
+
+    public ClientDTO() {
+    }
+
+    public ClientDTO(int idForm, String nameForm, String emailForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
+        this.idForm = idForm;
+        this.nameForm = nameForm;
+        this.emailForm = emailForm;
+        this.telForm = telForm;
+        this.rgForm = rgForm;
+        this.cpfForm = cpfForm;
+        this.cnhForm = cnhForm;
+        this.endForm = endForm;
+        this.compForm = compForm;
+        this.bairroForm = bairroForm;
+        this.cidadeForm = cidadeForm;
+        this.estadoForm = estadoForm;
+        this.cepForm = cepForm;
+        this.verifiedForm = verifiedForm;
+    }
 
     public ClientDTO(String nameForm, String emailForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
         this.nameForm = nameForm;
@@ -29,6 +50,14 @@ public class ClientDTO {
         this.estadoForm = estadoForm;
         this.cepForm = cepForm;
         this.verifiedForm = verifiedForm;
+    }
+
+    public int getIdForm() {
+        return idForm;
+    }
+
+    public void setIdForm(int idForm) {
+        this.idForm = idForm;
     }
 
     public String getNameForm() {

@@ -15,7 +15,7 @@ public class ClientService {
 
     public List<ClientDTO> getAll() {
         List<Client> list = repository.findAll();
-        return list.stream().map(x -> new ClientDTO(x.getName(), x.getEmail(), x.getTelefone(), x.getDocument().getRg(),
+        return list.stream().map(x -> new ClientDTO(x.getId(), x.getName(), x.getEmail(), x.getTelefone(), x.getDocument().getRg(),
                 x.getDocument().getCpf(), x.getDocument().getCnh(), x.getAddress().getLogradouro(), x.getAddress().getComplemento(),
                 x.getAddress().getBairro(), x.getAddress().getCidade(), x.getAddress().getEstado(), x.getAddress().getCep(), x.isVerified())).toList();
     }
@@ -23,5 +23,12 @@ public class ClientService {
     public boolean insert(ClientDTO clientDTO) {
         Client client = new Client(clientDTO);
         return repository.addClient(client);
+    }
+
+    public ClientDTO delete(int id) {
+        Client client = repository.delete(id);
+        return new ClientDTO(client.getId(), client.getName(), client.getEmail(), client.getTelefone(), client.getDocument().getRg(),
+                client.getDocument().getCpf(), client.getDocument().getCnh(), client.getAddress().getLogradouro(), client.getAddress().getComplemento(),
+                client.getAddress().getBairro(), client.getAddress().getCidade(), client.getAddress().getEstado(), client.getAddress().getCep(), client.isVerified());
     }
 }

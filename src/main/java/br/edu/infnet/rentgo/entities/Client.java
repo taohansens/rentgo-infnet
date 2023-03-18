@@ -3,7 +3,7 @@ package br.edu.infnet.rentgo.entities;
 import br.edu.infnet.rentgo.dtos.ClientDTO;
 
 public class Client {
-    private long id;
+    private Integer id;
     private String name;
     private String email;
     private String telefone;
@@ -11,7 +11,7 @@ public class Client {
     private Document document;
     private Address address;
 
-    public Client(long id, String name, String email, String telefone, boolean isVerified, Document document, Address address) {
+    public Client(Integer id, String name, String email, String telefone, boolean isVerified, Document document, Address address) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -35,11 +35,11 @@ public class Client {
     public Client() {
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
