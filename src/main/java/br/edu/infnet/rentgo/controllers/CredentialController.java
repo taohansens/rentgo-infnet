@@ -5,28 +5,40 @@ import br.edu.infnet.rentgo.services.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequestMapping("/usuarios")
 public class CredentialController {
     @Autowired
     private CredentialService service;
-
-    @GetMapping(value="/login")
-    public String login(){
-        return "login";
+    @GetMapping(value = "/listar")
+    public String ListCredentialUserScreen(Model model) {
+        model.addAttribute("usuarios", service.getAll());
+        return "users/listar";
     }
 
-    @PostMapping(value="/login")
-    public String loginForm(Model model, CredentialUserDTO userDTO){
-        if(service.checkLogin(userDTO)){
-            System.out.printf("Login Efetuado do usuário %s%n", userDTO.email);
-            return "redirect:/home";
-        };
-        model.addAttribute("errorMsg", "As credenciais para o e-mail " + userDTO.email + "são inválidas!");
-        System.out.println("ERRO de login.");
-        return login();
+    @GetMapping(value = "/registrar")
+    public String RegisterClientScreen() {
+        return "users/cadastro";
+    }
+
+    @PostMapping(value = "/registrar")
+    public String insert(CredentialUserDTO userDTO) {
+        boolean status = service.insert(userDTO);
+        if(status) {
+            System.out.printf("User %s adicionado", userDTO.emailForm);
+        } else {
+            System.out.printf("Erro ao adicionar %s", userDTO.passForm);
+        }
+        return "redirect:/usuarios/listar";
+    }
+
+    @GetMapping(value = "/{id}/delete")
+    public String delete(@PathVariable int id) {
+        CredentialUserDTO userDTO = service.delete(id);
+        System.out.printf("Usuário %d %s excluído com sucesso.", userDTO.getIdForm(), userDTO.getEmailForm());
+        return "redirect:/usuarios/listar";
     }
 
 }

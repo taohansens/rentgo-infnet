@@ -1,6 +1,9 @@
 package br.edu.infnet.rentgo.entities;
 
+import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
+
 public class CredentialUser {
+    private Integer id;
     private String email;
     private String password;
 
@@ -9,6 +12,18 @@ public class CredentialUser {
     public CredentialUser(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+    public CredentialUser(CredentialUserDTO credentialUserDTO) {
+        email = credentialUserDTO.emailForm;
+        password = credentialUserDTO.passForm;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getEmail() {

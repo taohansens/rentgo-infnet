@@ -39,6 +39,16 @@
                             <li><a class="dropdown-item" href="/clientes/registrar">Cadastrar</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Usuários do Sistema
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/usuarios/listar">Listar</a></li>
+                            <li><a class="dropdown-item" href="/usuarios/registrar">Cadastrar</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         <div class="nav-right">
