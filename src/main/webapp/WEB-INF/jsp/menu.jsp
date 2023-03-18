@@ -65,7 +65,7 @@
                 </c:if>
                 <c:if test="${not empty userLogged}">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Logout, ${userLogged.emailForm}</a>
+                <a class="nav-link" aria-current="page" href="/usuarios/logout">Logout, ${userLogged.emailForm}</a>
             </li>
                 </c:if>
             </ul>

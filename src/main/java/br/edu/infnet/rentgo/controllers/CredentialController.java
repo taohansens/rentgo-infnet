@@ -2,10 +2,12 @@ package br.edu.infnet.rentgo.controllers;
 
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
 import br.edu.infnet.rentgo.services.CredentialService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
 @SessionAttributes("userLogged")
@@ -61,6 +63,13 @@ public class CredentialController {
         CredentialUserDTO userDTO = service.delete(id);
         System.out.printf("Usuário %d %s excluído com sucesso.", userDTO.getIdForm(), userDTO.getEmailForm());
         return "redirect:/usuarios/listar";
+    }
+
+    @GetMapping(value = "/logout")
+    public String logout(HttpSession session, SessionStatus status){
+        status.setComplete();
+        session.removeAttribute("userLogged");
+        return "redirect:/";
     }
 
 }

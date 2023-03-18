@@ -19,4 +19,9 @@ public class AppController {
     public String Login() {
         return "redirect:/usuarios/login";
     }
+
+    @GetMapping(value = "/logout")
+    public String Logout() {
+        return "redirect:/usuarios/logout";
+    }
 }
