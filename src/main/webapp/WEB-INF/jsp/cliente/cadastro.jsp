@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,8 +11,9 @@
     <script type="text/javascript" src="/jquery/jquery-3.2.1.min.js"></script>
 </head>
 <body class="bg-light">
-<div class="container">
-    <div class="py-2 text-center">
+<div class="col-lg-8 mx-auto p-4 py-md-2">
+    <c:import url="/WEB-INF/jsp/menu.jsp" />
+    <div class="text-center">
         <h2>Cadastro de Cliente</h2>
     </div>
     <form action="/clientes/registrar" method="post">

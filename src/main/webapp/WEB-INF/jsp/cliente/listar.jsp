@@ -6,20 +6,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lista Clientes - RentGo</title>
+    <title>Listar Clientes - RentGo</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body class="d-flex h-100 text-center bg-light">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
-        <div>
-            <h3 class="float-md-start mb-0">RentGo - Listar Clientes</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link fw-bold py-1 px-0 m-2 text-black btn-link" aria-current="page"
-                   href="/">Voltar para Home</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-light">
+<div class="col-lg-8 mx-auto p-4 py-md-2">
+    <c:import url="/WEB-INF/jsp/menu.jsp"/>
+    <div class="text-center">
+        <h2>Cadastro de Cliente</h2>
+    </div>
     <main class="px-3">
         <a class="btn btn-primary mt-1 mb-2" href="/clientes/registrar" role="button">Novo
             Cliente</a>
