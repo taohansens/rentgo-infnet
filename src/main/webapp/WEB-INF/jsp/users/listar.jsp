@@ -16,8 +16,6 @@
         <h2>Lista de Usu&aacute;rios</h2>
     </div>
     <main class="px-3">
-        <a class="btn btn-primary mt-1 mb-2" href="/usuarios/registrar" role="button">Novo
-            Usu&aacute;rio</a>
         <c:if test="${empty usuarios}">
             <div class="alert alert-danger" role="alert">Nenhum usuário foi encontrado.</div>
         </c:if>

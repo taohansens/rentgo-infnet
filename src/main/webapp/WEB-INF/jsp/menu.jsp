@@ -54,10 +54,10 @@
         <div class="nav-right">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Sign Up</a>
+                <a class="nav-link" aria-current="page" href="/register">Sign Up</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Login</a>
+                <a class="nav-link" aria-current="page" href="/login">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#">Logout</a>

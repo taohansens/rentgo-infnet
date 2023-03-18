@@ -14,6 +14,11 @@ public class CredentialService {
     @Autowired
     private CredentialRepository repository;
 
+    public boolean login(CredentialUserDTO credentialUserDTO) {
+        CredentialUser credentialUser = new CredentialUser(credentialUserDTO);
+        return repository.login(credentialUser);
+    }
+
     public boolean insert(CredentialUserDTO credentialUserDTO) {
         CredentialUser credentialUser = new CredentialUser(credentialUserDTO);
         return repository.insert(credentialUser);

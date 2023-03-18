@@ -9,4 +9,14 @@ public class AppController {
     public String indexRoot() {
         return "inicio";
     }
+
+    @GetMapping(value = "/register")
+    public String Register() {
+        return "register";
+    }
+
+    @GetMapping(value = "/login")
+    public String Login() {
+        return "login";
+    }
 }

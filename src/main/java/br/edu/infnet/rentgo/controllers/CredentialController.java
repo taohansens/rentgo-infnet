@@ -3,6 +3,7 @@ package br.edu.infnet.rentgo.controllers;
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
 import br.edu.infnet.rentgo.services.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,22 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/usuarios")
 public class CredentialController {
+    public String msg;
     @Autowired
     private CredentialService service;
+
+    @PostMapping(value = "/login")
+    public String autenticar(Model model, CredentialUserDTO credentialUserDTO) {
+        boolean logged = service.login(credentialUserDTO);
+        if (logged) {
+            System.out.println("Logado com sucesso. " + credentialUserDTO.emailForm);
+            return "redirect:/";
+        } else {
+            System.out.println("Credenciais incorretas para o email " + credentialUserDTO.emailForm);
+            return "redirect:/login";
+        }
+    }
+
     @GetMapping(value = "/listar")
     public String ListCredentialUserScreen(Model model) {
         model.addAttribute("usuarios", service.getAll());
@@ -26,12 +41,12 @@ public class CredentialController {
     @PostMapping(value = "/registrar")
     public String insert(CredentialUserDTO userDTO) {
         boolean status = service.insert(userDTO);
-        if(status) {
+        if (status) {
             System.out.printf("User %s adicionado", userDTO.emailForm);
         } else {
             System.out.printf("Erro ao adicionar %s", userDTO.passForm);
         }
-        return "redirect:/usuarios/listar";
+        return "redirect:/";
     }
 
     @GetMapping(value = "/{id}/delete")
