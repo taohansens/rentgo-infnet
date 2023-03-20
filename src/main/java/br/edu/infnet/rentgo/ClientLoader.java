@@ -1,8 +1,10 @@
 package br.edu.infnet.rentgo;
 
+import br.edu.infnet.rentgo.dtos.ClientDTO;
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
+import br.edu.infnet.rentgo.entities.Client;
 import br.edu.infnet.rentgo.entities.CredentialUser;
-import br.edu.infnet.rentgo.services.CredentialService;
+import br.edu.infnet.rentgo.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -13,36 +15,36 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class UserLoader implements ApplicationRunner {
+public class ClientLoader implements ApplicationRunner {
 
     @Autowired
-    private CredentialService credentialService;
+    private ClientService clientService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println(LocalDateTime.now() + " [UserLoader] Init.");
+        System.out.println(LocalDateTime.now() + " [ClientLoader] Init.");
         try {
-            String arquivo = "DATAcredentialUsers.txt";
-            try{
+            String arquivo = "DATAclients.txt";
+            try {
                 FileReader fileR = new FileReader(arquivo);
                 BufferedReader leitura = new BufferedReader(fileR);
 
                 String linha = leitura.readLine();
                 String[] campos = null;
 
-                List<CredentialUserDTO> credentialUserDTOS = new ArrayList<>();
                 while (linha != null) {
                     campos = linha.split(";");
-                    CredentialUser credentialUser = new CredentialUser(campos[0], campos[1]);
-                    credentialService.insert(new CredentialUserDTO(credentialUser.getEmail(), credentialUser.getPassword()));
+                    ClientDTO clientDTO = new ClientDTO(campos[0], campos[1], campos[2], campos[3], campos[4], campos[5], campos[6], campos[7], campos[8], campos[9], campos[10], campos[11], Boolean.parseBoolean(campos[12]));
+                    clientService.insert(clientDTO);
                     linha = leitura.readLine();
                 }
                 leitura.close();
                 fileR.close();
-            } catch (IOException e){
+            } catch (IOException e) {
                 System.out.println("[ERRO] " + e.getMessage());
             }
         } finally {
