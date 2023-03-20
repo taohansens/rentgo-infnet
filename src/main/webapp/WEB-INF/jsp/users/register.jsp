@@ -15,11 +15,11 @@
     <h1 class="h3 mb-3 fw-normal">Faça o cadastro.</h1>
     <form action="/usuarios/registrar" method="post">>
         <div class="form-floating">
-            <input type="email" class="form-control" id="email" name="emailForm" placeholder="email@dominio.com" value="admin@rentgo.com">
+            <input type="email" class="form-control" id="email" name="emailForm" placeholder="" value="">
             <label for="email">Email</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="password" name="passForm" placeholder="Senha" value="admin123@">
+            <input type="password" class="form-control" id="password" name="passForm" placeholder="Senha" value="">
             <label for="password">Senha</label>
         </div>
 

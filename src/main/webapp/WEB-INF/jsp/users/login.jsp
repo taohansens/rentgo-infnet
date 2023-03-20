@@ -19,11 +19,11 @@
     </c:if>
     <form action="/usuarios/login" method="post">
         <div class="form-floating">
-            <input type="email" class="form-control" id="email" name="emailForm" placeholder="email@dominio.com" value="admin@rentgo.com">
+            <input type="email" class="form-control" id="email" name="emailForm" placeholder="Email" value="">
             <label for="email">Email</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="password" name="passForm" placeholder="Senha" value="admin123@">
+            <input type="password" class="form-control" id="password" name="passForm" placeholder="Senha" value="">
             <label for="password">Senha</label>
         </div>
 
