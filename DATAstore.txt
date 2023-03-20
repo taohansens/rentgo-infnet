@@ -1,0 +1,3 @@
+CENTRO RJ;Rua Uruguaina;160;Centro;Rio de Janeiro;RJ;20050095
+AEROPORTO RJ;Rua Jardel Jercolis;Aeroporto;Gloria;Rio de Janeiro;RJ;20021150
+AEROPORTO SP;SP 019;Aeroporto; Jardim Cumbica;Guarulho;SP;07190190
