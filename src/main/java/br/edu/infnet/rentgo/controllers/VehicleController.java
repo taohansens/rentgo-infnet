@@ -29,19 +29,19 @@ public class VehicleController {
 
     @PostMapping(value = "/registrar")
     public String insert(VehicleDTO vehicleDTO) {
-        boolean status = service.insert(vehicleDTO);
-        if(status) {
-            System.out.println("[201] Veiculo de placa " + vehicleDTO.getPlacaForm() + " adicionado");
+        VehicleDTO status = service.insert(vehicleDTO);
+        if(status.getIdForm() > 0) {
+            System.out.println("[201] Veiculo de placa " + status.getPlacaForm() + " adicionado");
         } else {
-            System.out.println("[400] Veiculo de placa " + vehicleDTO.getPlacaForm() + " não adicionada");
+            System.out.println("[400] Veiculo de placa " + status.getPlacaForm() + " não adicionada");
         }
         return "redirect:/vehicle/listar";
     }
 
     @GetMapping(value = "/{id}/delete")
     public String delete(@PathVariable int id) {
-        VehicleDTO vehicleDTO = service.delete(id);
-        System.out.printf("[204] Veiculo de placa %s excluido com sucesso.", vehicleDTO.placaForm);
+        service.delete(id);
+        System.out.printf("[204] Veiculo de placa %s excluido com sucesso.", id);
         return "redirect:/vehicle/listar";
     }
 }

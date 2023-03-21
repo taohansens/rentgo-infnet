@@ -40,8 +40,8 @@ public class StoreController {
 
     @GetMapping(value = "/{id}/delete")
     public String delete(@PathVariable int id) {
-        StoreDTO storeDTO = service.delete(id);
-        System.out.printf("[204] Loja %s excluido com sucesso.", storeDTO.nameForm);
+        service.delete(id);
+        System.out.printf("[204] Loja %s excluido com sucesso.", id);
         return "redirect:/store/listar";
     }
 }

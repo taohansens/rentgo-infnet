@@ -2,10 +2,7 @@ package br.edu.infnet.rentgo.entities;
 
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class CredentialUser {

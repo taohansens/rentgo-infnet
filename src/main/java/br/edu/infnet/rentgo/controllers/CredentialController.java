@@ -49,19 +49,19 @@ public class CredentialController {
 
     @PostMapping(value = "/registrar")
     public String insert(CredentialUserDTO userDTO) {
-        boolean status = service.insert(userDTO);
-        if (status) {
-            System.out.printf("User %s adicionado", userDTO.emailForm);
+        CredentialUserDTO status = service.insert(userDTO);
+        if (status.getIdForm() > 0) {
+            System.out.printf("User %s adicionado", status.emailForm);
         } else {
-            System.out.printf("Erro ao adicionar %s", userDTO.passForm);
+            System.out.printf("Erro ao adicionar %s", status.passForm);
         }
         return "redirect:/";
     }
 
     @GetMapping(value = "/{id}/delete")
     public String delete(@PathVariable int id) {
-        CredentialUserDTO userDTO = service.delete(id);
-        System.out.printf("Usuário %d %s excluído com sucesso.", userDTO.getIdForm(), userDTO.getEmailForm());
+        service.delete(id);
+        System.out.printf("Usuário %d excluído com sucesso.", id);
         return "redirect:/usuarios/listar";
     }
 

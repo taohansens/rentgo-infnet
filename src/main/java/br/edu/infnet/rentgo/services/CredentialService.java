@@ -16,25 +16,25 @@ public class CredentialService {
 
     public CredentialUserDTO login(CredentialUserDTO credentialUserDTO) {
         CredentialUser credentialUser = new CredentialUser(credentialUserDTO);
-        CredentialUser loggedUser = repository.login(credentialUser);
-        if(loggedUser != null) {
-            return new CredentialUserDTO(loggedUser.getId(), loggedUser.getEmail(), "******");
+        CredentialUser credentialUserDB = repository.autenticacao(credentialUser.getEmail(), credentialUser.getPassword());
+        if(credentialUserDB != null) {
+            return new CredentialUserDTO(credentialUserDB.getId(), credentialUserDB.getEmail(), credentialUserDB.getPassword());
         }
         return null;
     }
 
-    public boolean insert(CredentialUserDTO credentialUserDTO) {
+    public CredentialUserDTO insert(CredentialUserDTO credentialUserDTO) {
         CredentialUser credentialUser = new CredentialUser(credentialUserDTO);
-        return repository.insert(credentialUser);
+        CredentialUser credentialUserBD = repository.save(credentialUser);
+        return new CredentialUserDTO(credentialUserBD.getId(), credentialUserBD.getEmail(), credentialUserBD.getPassword());
     }
 
     public List<CredentialUserDTO> getAll() {
-        Collection<CredentialUser> list = repository.getAll();
+        Collection<CredentialUser> list = (Collection<CredentialUser>) repository.findAll();
         return list.stream().map(x -> new CredentialUserDTO(x.getId(), x.getEmail(), "******")).toList();
     }
 
-    public CredentialUserDTO delete(int id) {
-        CredentialUser user = repository.delete(id);
-        return new CredentialUserDTO(user.getId(), user.getEmail(), "******");
+    public void delete(int id) {
+        repository.deleteById(id);
     }
 }

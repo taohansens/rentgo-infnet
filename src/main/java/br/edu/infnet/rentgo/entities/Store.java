@@ -1,15 +1,25 @@
 package br.edu.infnet.rentgo.entities;
 import br.edu.infnet.rentgo.dtos.StoreDTO;
+import jakarta.persistence.*;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Entity
 public class Store {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "document_id", referencedColumnName = "id")
     private Address address;
+    @OneToMany
+    @JoinTable(name = "tb_store_vehicle",
+            joinColumns = @JoinColumn(name = "store_id"),
+            inverseJoinColumns = @JoinColumn(name = "vehicle_id"))
     private Set<Vehicle> vehicles = new HashSet<>();
 
     public Store() {

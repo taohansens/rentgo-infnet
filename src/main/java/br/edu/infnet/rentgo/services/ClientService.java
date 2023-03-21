@@ -21,9 +21,12 @@ public class ClientService {
                 x.getAddress().getBairro(), x.getAddress().getCidade(), x.getAddress().getEstado(), x.getAddress().getCep(), x.isVerified())).toList();
     }
 
-    public Client insert(ClientDTO clientDTO) {
+    public ClientDTO insert(ClientDTO clientDTO) {
         Client client = new Client(clientDTO);
-        return repository.save(client);
+        Client clientDB = repository.save(client);
+        return new ClientDTO(clientDB.getId(), clientDB.getName(), clientDB.getEmail(), clientDB.getTelefone(), clientDB.getDocument().getRg(),
+                clientDB.getDocument().getCpf(), clientDB.getDocument().getCnh(), clientDB.getAddress().getLogradouro(), clientDB.getAddress().getComplemento(),
+                clientDB.getAddress().getBairro(), clientDB.getAddress().getCidade(), clientDB.getAddress().getEstado(), clientDB.getAddress().getCep(), clientDB.isVerified());
     }
 
     public void delete(int id) {
