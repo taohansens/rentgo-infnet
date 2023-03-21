@@ -1,14 +1,23 @@
 package br.edu.infnet.rentgo.entities;
 
 import br.edu.infnet.rentgo.dtos.ClientDTO;
+import jakarta.persistence.*;
 
+@Entity
 public class Client {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String email;
     private String telefone;
     private boolean isVerified;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "document_id", referencedColumnName = "id")
     private Document document;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     public Client(Integer id, String name, String email, String telefone, boolean isVerified, Document document, Address address) {

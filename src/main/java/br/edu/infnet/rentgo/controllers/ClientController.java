@@ -2,6 +2,7 @@ package br.edu.infnet.rentgo.controllers;
 
 import br.edu.infnet.rentgo.dtos.ClientDTO;
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
+import br.edu.infnet.rentgo.entities.Client;
 import br.edu.infnet.rentgo.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,8 +30,8 @@ public class ClientController {
 
     @PostMapping(value = "/registrar")
     public String insert(ClientDTO clientDTO) {
-        boolean status = service.insert(clientDTO);
-        if(status) {
+        Client status = service.insert(clientDTO);
+        if(status != null) {
             System.out.printf("Cliente %s adicionado", clientDTO.emailForm);
         } else {
             System.out.printf("Erro ao adicionar %s", clientDTO.emailForm);
@@ -40,8 +41,8 @@ public class ClientController {
 
     @GetMapping(value = "/{id}/delete")
     public String delete(@PathVariable int id) {
-        ClientDTO clientDTO = service.delete(id);
-        System.out.printf("Usuário %s excluído com sucesso.", clientDTO.emailForm);
+        service.delete(id);
+        System.out.printf("Usuário ID %s excluído com sucesso.", id);
         return "redirect:/clientes/listar";
     }
 }

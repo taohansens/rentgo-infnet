@@ -1,6 +1,15 @@
 package br.edu.infnet.rentgo.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import jakarta.persistence.GeneratedValue;
+
+@Entity
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String cep;
     private String logradouro;

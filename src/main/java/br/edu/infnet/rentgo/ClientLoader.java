@@ -1,9 +1,6 @@
 package br.edu.infnet.rentgo;
 
 import br.edu.infnet.rentgo.dtos.ClientDTO;
-import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
-import br.edu.infnet.rentgo.entities.Client;
-import br.edu.infnet.rentgo.entities.CredentialUser;
 import br.edu.infnet.rentgo.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -14,9 +11,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class ClientLoader implements ApplicationRunner {
