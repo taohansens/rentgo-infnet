@@ -19,13 +19,19 @@ public class Client {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    public Client(Integer id, String name, String telefone, boolean isVerified, Document document, Address address) {
+    @OneToOne
+    @JoinColumn(name = "credentialUser_id", referencedColumnName = "id")
+    private CredentialUser credentialUser;
+
+
+    public Client(Integer id, String name, String telefone, boolean isVerified, Document document, Address address, CredentialUser credentialUser) {
         this.id = id;
         this.name = name;
         this.telefone = telefone;
         this.isVerified = isVerified;
         this.document = document;
         this.address = address;
+        this.credentialUser = credentialUser;
     }
 
     public Client(ClientDTO clientDTO){
@@ -36,7 +42,6 @@ public class Client {
         address = new Address(clientDTO.getCepForm(), clientDTO.getEndForm(), clientDTO.getCompForm(), clientDTO.getCompForm(),
                 clientDTO.getCidadeForm(), clientDTO.getEstadoForm());
     }
-
 
     public Client() {
     }
@@ -87,6 +92,14 @@ public class Client {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public CredentialUser getCredentialUser() {
+        return credentialUser;
+    }
+
+    public void setCredentialUser(CredentialUser credentialUser) {
+        this.credentialUser = credentialUser;
     }
 
     @Override

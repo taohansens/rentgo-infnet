@@ -6,6 +6,7 @@ import br.edu.infnet.rentgo.services.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Order(1)
 @Component
 public class UserLoader implements ApplicationRunner {
 
@@ -33,7 +35,6 @@ public class UserLoader implements ApplicationRunner {
                 String linha = leitura.readLine();
                 String[] campos = null;
 
-                List<CredentialUserDTO> credentialUserDTOS = new ArrayList<>();
                 while (linha != null) {
                     campos = linha.split(";");
                     CredentialUser credentialUser = new CredentialUser(campos[0], campos[1]);

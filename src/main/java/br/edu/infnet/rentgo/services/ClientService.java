@@ -2,6 +2,7 @@ package br.edu.infnet.rentgo.services;
 
 import br.edu.infnet.rentgo.dtos.ClientDTO;
 import br.edu.infnet.rentgo.entities.Client;
+import br.edu.infnet.rentgo.entities.CredentialUser;
 import br.edu.infnet.rentgo.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,9 @@ public class ClientService {
 
     public ClientDTO insert(ClientDTO clientDTO) {
         Client client = new Client(clientDTO);
+        CredentialUser credentialUser = new CredentialUser();
+        credentialUser.setId(clientDTO.getCredentialIdForm());
+        client.setCredentialUser(credentialUser);
         Client clientDB = repository.save(client);
         return new ClientDTO(clientDB.getId(), clientDB.getName(), clientDB.getTelefone(), clientDB.getDocument().getRg(),
                 clientDB.getDocument().getCpf(), clientDB.getDocument().getCnh(), clientDB.getAddress().getLogradouro(), clientDB.getAddress().getComplemento(),

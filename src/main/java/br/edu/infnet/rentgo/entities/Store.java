@@ -14,7 +14,7 @@ public class Store {
     private Integer id;
     private String name;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "document_id", referencedColumnName = "id")
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
     @OneToMany
     @JoinTable(name = "tb_store_vehicle",

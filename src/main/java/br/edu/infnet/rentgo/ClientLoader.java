@@ -5,6 +5,7 @@ import br.edu.infnet.rentgo.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -12,6 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+@Order(2)
 @Component
 public class ClientLoader implements ApplicationRunner {
 
@@ -33,6 +35,7 @@ public class ClientLoader implements ApplicationRunner {
                 while (linha != null) {
                     campos = linha.split(";");
                     ClientDTO clientDTO = new ClientDTO(campos[0], campos[1], campos[2], campos[3], campos[4], campos[5], campos[6], campos[7], campos[8], campos[9], campos[10], Boolean.parseBoolean(campos[11]));
+                    clientDTO.setCredentialIdForm(Integer.parseInt(campos[12]));
                     clientService.insert(clientDTO);
                     linha = leitura.readLine();
                 }

@@ -1,7 +1,6 @@
 package br.edu.infnet.rentgo.entities;
 
 import br.edu.infnet.rentgo.dtos.CredentialUserDTO;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -14,13 +13,19 @@ public class CredentialUser {
 
     public CredentialUser() {
     }
+
     public CredentialUser(String email, String password) {
         this.email = email;
         this.password = password;
     }
+
     public CredentialUser(CredentialUserDTO credentialUserDTO) {
         email = credentialUserDTO.emailForm;
         password = credentialUserDTO.passForm;
+    }
+
+    public CredentialUser(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {

@@ -14,6 +14,7 @@ public class ClientDTO {
     private String estadoForm;
     private String cepForm;
     private boolean verifiedForm;
+    private int credentialIdForm;
 
     public ClientDTO() {
     }
@@ -151,5 +152,13 @@ public class ClientDTO {
 
     public void setVerifiedForm(boolean verifiedForm) {
         this.verifiedForm = verifiedForm;
+    }
+
+    public int getCredentialIdForm() {
+        return credentialIdForm;
+    }
+
+    public void setCredentialIdForm(int credentialIdForm) {
+        this.credentialIdForm = credentialIdForm;
     }
 }
