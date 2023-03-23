@@ -29,7 +29,9 @@
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <tr>
-                <th>ID</th>
+                <th>Client ID</th>
+                <th>Credential ID</th>
+                <th>Credential Email</th>
                 <th>Nome</th>
                 <th>Tefone</th>
                 <th>RG</th>
@@ -49,6 +51,8 @@
             <c:forEach var="client" items="${clientes}">
                 <tr>
                     <td>${client.idForm}</td>
+                    <td>${client.credentialIdForm}</td>
+                    <td>${client.credentialEmailForm}</td>
                     <td>${client.nameForm}</td>
                     <td>${client.telForm}</td>
                     <td>${client.rgForm}</td>

@@ -15,6 +15,7 @@ public class ClientDTO {
     private String cepForm;
     private boolean verifiedForm;
     private int credentialIdForm;
+    private String credentialEmailForm;
 
     public ClientDTO() {
     }
@@ -50,6 +51,24 @@ public class ClientDTO {
         this.cepForm = cepForm;
         this.verifiedForm = verifiedForm;
         this.credentialIdForm = credentialIdForm;
+    }
+
+    public ClientDTO(int idForm, String nameForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm, int credentialIdForm, String credentialEmailForm) {
+        this.idForm = idForm;
+        this.nameForm = nameForm;
+        this.telForm = telForm;
+        this.rgForm = rgForm;
+        this.cpfForm = cpfForm;
+        this.cnhForm = cnhForm;
+        this.endForm = endForm;
+        this.compForm = compForm;
+        this.bairroForm = bairroForm;
+        this.cidadeForm = cidadeForm;
+        this.estadoForm = estadoForm;
+        this.cepForm = cepForm;
+        this.verifiedForm = verifiedForm;
+        this.credentialIdForm = credentialIdForm;
+        this.credentialEmailForm = credentialEmailForm;
     }
 
     public ClientDTO(String nameForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
@@ -177,5 +196,13 @@ public class ClientDTO {
 
     public void setCredentialIdForm(int credentialIdForm) {
         this.credentialIdForm = credentialIdForm;
+    }
+
+    public String getCredentialEmailForm() {
+        return credentialEmailForm;
+    }
+
+    public void setCredentialEmailForm(String credentialEmailForm) {
+        this.credentialEmailForm = credentialEmailForm;
     }
 }

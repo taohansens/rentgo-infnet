@@ -17,9 +17,10 @@ public class ClientService {
 
     public List<ClientDTO> getAll() {
         Collection<Client> list = (Collection<Client>) repository.findAll();
-        return list.stream().map(x ->  new ClientDTO(x.getId(), x.getName(), x.getTelefone(), x.getDocument().getRg(),
+        return list.stream().map(x -> new ClientDTO(x.getId(), x.getName(), x.getTelefone(), x.getDocument().getRg(),
                 x.getDocument().getCpf(), x.getDocument().getCnh(), x.getAddress().getLogradouro(), x.getAddress().getComplemento(),
-                x.getAddress().getBairro(), x.getAddress().getCidade(), x.getAddress().getEstado(), x.getAddress().getCep(), x.isVerified(), x.getCredentialUser().getId())).toList();
+                x.getAddress().getBairro(), x.getAddress().getCidade(), x.getAddress().getEstado(), x.getAddress().getCep(),
+                x.isVerified(), x.getCredentialUser().getId(), x.getCredentialUser().getEmail())).toList();
     }
 
     public ClientDTO insert(ClientDTO clientDTO) {
@@ -29,8 +30,10 @@ public class ClientService {
         client.setCredentialUser(credentialUser);
         Client clientDB = repository.save(client);
         return new ClientDTO(clientDB.getId(), clientDB.getName(), clientDB.getTelefone(), clientDB.getDocument().getRg(),
-                clientDB.getDocument().getCpf(), clientDB.getDocument().getCnh(), clientDB.getAddress().getLogradouro(), clientDB.getAddress().getComplemento(),
-                clientDB.getAddress().getBairro(), clientDB.getAddress().getCidade(), clientDB.getAddress().getEstado(), clientDB.getAddress().getCep(), clientDB.isVerified());
+                clientDB.getDocument().getCpf(), clientDB.getDocument().getCnh(), clientDB.getAddress().getLogradouro(),
+                clientDB.getAddress().getComplemento(), clientDB.getAddress().getBairro(), clientDB.getAddress().getCidade(),
+                clientDB.getAddress().getEstado(), clientDB.getAddress().getCep(), clientDB.isVerified(), clientDB.getCredentialUser().getId(),
+                clientDB.getCredentialUser().getEmail());
     }
 
     public void delete(int id) {
