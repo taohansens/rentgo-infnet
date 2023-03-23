@@ -11,6 +11,9 @@ public class CredentialUser {
     private String email;
     private String password;
 
+    @OneToOne(mappedBy = "credentialUser")
+    private Client client;
+
     public CredentialUser() {
     }
 

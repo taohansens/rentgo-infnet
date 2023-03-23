@@ -17,9 +17,9 @@ public class ClientService {
 
     public List<ClientDTO> getAll() {
         Collection<Client> list = (Collection<Client>) repository.findAll();
-        return list.stream().map(x -> new ClientDTO(x.getId(), x.getName(), x.getTelefone(), x.getDocument().getRg(),
+        return list.stream().map(x ->  new ClientDTO(x.getId(), x.getName(), x.getTelefone(), x.getDocument().getRg(),
                 x.getDocument().getCpf(), x.getDocument().getCnh(), x.getAddress().getLogradouro(), x.getAddress().getComplemento(),
-                x.getAddress().getBairro(), x.getAddress().getCidade(), x.getAddress().getEstado(), x.getAddress().getCep(), x.isVerified())).toList();
+                x.getAddress().getBairro(), x.getAddress().getCidade(), x.getAddress().getEstado(), x.getAddress().getCep(), x.isVerified(), x.getCredentialUser().getId())).toList();
     }
 
     public ClientDTO insert(ClientDTO clientDTO) {

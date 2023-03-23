@@ -35,6 +35,23 @@ public class ClientDTO {
         this.verifiedForm = verifiedForm;
     }
 
+    public ClientDTO(int idForm, String nameForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm, int credentialIdForm) {
+        this.idForm = idForm;
+        this.nameForm = nameForm;
+        this.telForm = telForm;
+        this.rgForm = rgForm;
+        this.cpfForm = cpfForm;
+        this.cnhForm = cnhForm;
+        this.endForm = endForm;
+        this.compForm = compForm;
+        this.bairroForm = bairroForm;
+        this.cidadeForm = cidadeForm;
+        this.estadoForm = estadoForm;
+        this.cepForm = cepForm;
+        this.verifiedForm = verifiedForm;
+        this.credentialIdForm = credentialIdForm;
+    }
+
     public ClientDTO(String nameForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
         this.nameForm = nameForm;
         this.telForm = telForm;
