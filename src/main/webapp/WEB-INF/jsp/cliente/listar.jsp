@@ -31,7 +31,6 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>E-mail</th>
                 <th>Tefone</th>
                 <th>RG</th>
                 <th>CPF</th>
@@ -51,7 +50,6 @@
                 <tr>
                     <td>${client.idForm}</td>
                     <td>${client.nameForm}</td>
-                    <td>${client.emailForm}</td>
                     <td>${client.telForm}</td>
                     <td>${client.rgForm}</td>
                     <td>${client.cpfForm}</td>

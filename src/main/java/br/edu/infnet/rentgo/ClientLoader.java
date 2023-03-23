@@ -32,7 +32,7 @@ public class ClientLoader implements ApplicationRunner {
 
                 while (linha != null) {
                     campos = linha.split(";");
-                    ClientDTO clientDTO = new ClientDTO(campos[0], campos[1], campos[2], campos[3], campos[4], campos[5], campos[6], campos[7], campos[8], campos[9], campos[10], campos[11], Boolean.parseBoolean(campos[12]));
+                    ClientDTO clientDTO = new ClientDTO(campos[0], campos[1], campos[2], campos[3], campos[4], campos[5], campos[6], campos[7], campos[8], campos[9], campos[10], Boolean.parseBoolean(campos[11]));
                     clientService.insert(clientDTO);
                     linha = leitura.readLine();
                 }

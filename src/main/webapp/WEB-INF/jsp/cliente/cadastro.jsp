@@ -26,16 +26,6 @@
                         Esse campo precisa estar preenchido.
                     </div>
                 </div>
-                <div class="col-5">
-                    <label for="emailForm" class="form-label">Email</label>
-                    <div class="input-group has-validation">
-                        <span class="input-group-text">@</span>
-                        <input type="email" class="form-control" id="emailForm" name="emailForm" placeholder="Digite seu email" required>
-                        <div class="invalid-feedback">
-                            Esse não é um email válido.
-                        </div>
-                    </div>
-                </div>
                 <div class="col-4">
                     <label for="telForm" class="form-label">Telefone</label>
                     <input type="text" class="form-control" id="telForm" name="telForm" placeholder="Telefone" value="" required>

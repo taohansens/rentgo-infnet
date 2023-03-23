@@ -9,7 +9,6 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String email;
     private String telefone;
     private boolean isVerified;
     @OneToOne(cascade = CascadeType.ALL)
@@ -20,10 +19,9 @@ public class Client {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    public Client(Integer id, String name, String email, String telefone, boolean isVerified, Document document, Address address) {
+    public Client(Integer id, String name, String telefone, boolean isVerified, Document document, Address address) {
         this.id = id;
         this.name = name;
-        this.email = email;
         this.telefone = telefone;
         this.isVerified = isVerified;
         this.document = document;
@@ -31,13 +29,12 @@ public class Client {
     }
 
     public Client(ClientDTO clientDTO){
-        name = clientDTO.nameForm;
-        email = clientDTO.emailForm;
-        telefone = clientDTO.telForm;
-        isVerified = clientDTO.verifiedForm;
-        document = new Document(clientDTO.rgForm, clientDTO.cpfForm, clientDTO.cnhForm);
-        address = new Address(clientDTO.cepForm, clientDTO.endForm, clientDTO.compForm, clientDTO.bairroForm,
-                clientDTO.cidadeForm, clientDTO.estadoForm);
+        name = clientDTO.getNameForm();
+        telefone = clientDTO.getTelForm();
+        isVerified = clientDTO.isVerifiedForm();
+        document = new Document(clientDTO.getRgForm(), clientDTO.getCpfForm(), clientDTO.getCnhForm());
+        address = new Address(clientDTO.getCepForm(), clientDTO.getEndForm(), clientDTO.getCompForm(), clientDTO.getCompForm(),
+                clientDTO.getCidadeForm(), clientDTO.getEstadoForm());
     }
 
 
@@ -58,14 +55,6 @@ public class Client {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getTelefone() {
@@ -104,7 +93,6 @@ public class Client {
     public String toString() {
         return "CLIENTE {" +
                 "NOME='" + name + '\'' +
-                ", EMAIL='" + email + '\'' +
                 ", TELEFONE='" + telefone + '\'' +
                  ", " + document +
                 ", " + address +

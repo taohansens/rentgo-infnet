@@ -1,8 +1,8 @@
-Jose Melo Oliveira;josesmelo@gmail.com;96404131405;ap-42875334;79341758173;24464513753;Rua Belo Horizonte;8339;Vila Nova;Santana;AP;72845893;true
-Luiz Batista Nascimento;luizs90@hotmail.com;71948905457;ba-43247021;71951146514;07363080539;Rua Vinte de Setembro;2034;Centro;Lauro de Freitas;BA;05987591;true
-Amanda Moura Rocha;amandarocc@gmail.com;23303396400;pi-34501025;86986183260;26832074363;Rua Rio de Janeiro;6296;Bela Vista;Teresina;PI;32458518;true
-Paulo Campos de Andrade;pauloppcampos@gmail.com;60792429079;pi-34501025;86986183260;39857089098;Rua Padre Moretti;174;Pedrinhas;Porto Velho;RO;76801452;true
-Brenda Rebeca Drumond;brenda_drumond@casabellavidros.com.br;78533953453;38638977-9;47996054399;54134264130;Rua Anfiloquio Nunes Pires;6296;Bela Vista;Gaspar;SC;89110976;true
-Otavio Daniel Peixoto;otavioddani@gmail.com;61413441009;92776521-2;92988439671;06647076403;Rua Loanda;954;Jardim Santos Dumont;Paranavai;PR;87706060;true
-Francisca Flavia Hadassa Porto;franciflaviaha@gmail.com;70683156071;71245018-9;88994033480;07675006789;Rua Maravilha;142;Gilberto Mestrinho;Manaus;AM;69086669;true
-Danilo Alexandre Nunes;daniloalexandre1@hotmail.com;04982339015;22174058-2;6994933150;94871576388;Rua Assis de Melo;513;Frei Damiao;Juazeiro do Norte;CE;63044290;true
+Jose Melo Oliveira;96404131405;ap-42875334;79341758173;24464513753;Rua Belo Horizonte;8339;Vila Nova;Santana;AP;72845893;true
+Luiz Batista Nascimento;71948905457;ba-43247021;71951146514;07363080539;Rua Vinte de Setembro;2034;Centro;Lauro de Freitas;BA;05987591;true
+Amanda Moura Rocha;23303396400;pi-34501025;86986183260;26832074363;Rua Rio de Janeiro;6296;Bela Vista;Teresina;PI;32458518;true
+Paulo Campos de Andrade;60792429079;pi-34501025;86986183260;39857089098;Rua Padre Moretti;174;Pedrinhas;Porto Velho;RO;76801452;true
+Brenda Rebeca Drumond;78533953453;38638977-9;47996054399;54134264130;Rua Anfiloquio Nunes Pires;6296;Bela Vista;Gaspar;SC;89110976;true
+Otavio Daniel Peixoto;61413441009;92776521-2;92988439671;06647076403;Rua Loanda;954;Jardim Santos Dumont;Paranavai;PR;87706060;true
+Francisca Flavia Hadassa Porto;70683156071;71245018-9;88994033480;07675006789;Rua Maravilha;142;Gilberto Mestrinho;Manaus;AM;69086669;true
+Danilo Alexandre Nunes;04982339015;22174058-2;6994933150;94871576388;Rua Assis de Melo;513;Frei Damiao;Juazeiro do Norte;CE;63044290;true

@@ -30,9 +30,9 @@ public class ClientController {
     public String insert(ClientDTO clientDTO) {
         ClientDTO status = service.insert(clientDTO);
         if(status != null) {
-            System.out.printf("Cliente %s adicionado", clientDTO.emailForm);
+            System.out.printf("Cliente %s adicionado", clientDTO.getNameForm());
         } else {
-            System.out.printf("Erro ao adicionar %s", clientDTO.emailForm);
+            System.out.printf("Erro ao adicionar %s", clientDTO.getNameForm());
         }
         return "redirect:/clientes/listar";
     }

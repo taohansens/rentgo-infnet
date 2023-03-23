@@ -1,28 +1,26 @@
 package br.edu.infnet.rentgo.dtos;
 
 public class ClientDTO {
-    public int idForm;
-    public String nameForm;
-    public String emailForm;
-    public String telForm;
-    public String rgForm;
-    public String cpfForm;
-    public String cnhForm;
-    public String endForm;
-    public String compForm;
-    public String bairroForm;
-    public String cidadeForm;
-    public String estadoForm;
-    public String cepForm;
-    public boolean verifiedForm;
+    private int idForm;
+    private String nameForm;
+    private String telForm;
+    private String rgForm;
+    private String cpfForm;
+    private String cnhForm;
+    private String endForm;
+    private String compForm;
+    private String bairroForm;
+    private String cidadeForm;
+    private String estadoForm;
+    private String cepForm;
+    private boolean verifiedForm;
 
     public ClientDTO() {
     }
 
-    public ClientDTO(int idForm, String nameForm, String emailForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
+    public ClientDTO(int idForm, String nameForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
         this.idForm = idForm;
         this.nameForm = nameForm;
-        this.emailForm = emailForm;
         this.telForm = telForm;
         this.rgForm = rgForm;
         this.cpfForm = cpfForm;
@@ -36,9 +34,8 @@ public class ClientDTO {
         this.verifiedForm = verifiedForm;
     }
 
-    public ClientDTO(String nameForm, String emailForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
+    public ClientDTO(String nameForm, String telForm, String rgForm, String cpfForm, String cnhForm, String endForm, String compForm, String bairroForm, String cidadeForm, String estadoForm, String cepForm, boolean verifiedForm) {
         this.nameForm = nameForm;
-        this.emailForm = emailForm;
         this.telForm = telForm;
         this.rgForm = rgForm;
         this.cpfForm = cpfForm;
@@ -66,14 +63,6 @@ public class ClientDTO {
 
     public void setNameForm(String nameForm) {
         this.nameForm = nameForm;
-    }
-
-    public String getEmailForm() {
-        return emailForm;
-    }
-
-    public void setEmailForm(String emailForm) {
-        this.emailForm = emailForm;
     }
 
     public String getTelForm() {
