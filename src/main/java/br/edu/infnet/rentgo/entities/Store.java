@@ -22,6 +22,12 @@ public class Store {
             inverseJoinColumns = @JoinColumn(name = "vehicle_id"))
     private Set<Vehicle> vehicles = new HashSet<>();
 
+    @OneToMany
+    @JoinTable(name = "tb_store_booking",
+            joinColumns = @JoinColumn(name = "store_id"),
+            inverseJoinColumns = @JoinColumn(name = "booking_id"))
+    private Set<Booking> bookings = new HashSet<>();
+
     public Store() {
     }
 

@@ -1,10 +1,7 @@
 package br.edu.infnet.rentgo.entities;
 
 import br.edu.infnet.rentgo.dtos.VehicleDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Vehicle {
@@ -12,6 +9,9 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String placa;
+
+    @ManyToOne
+    private Store store;
 
     public Vehicle() {
     }
@@ -21,8 +21,14 @@ public class Vehicle {
         this.placa = placa;
     }
 
+    public Vehicle(Integer id, String placa, Store store) {
+        this.id = id;
+        this.placa = placa;
+        this.store = store;
+    }
+
     public Vehicle(VehicleDTO vehicleDTO) {
-        placa = vehicleDTO.placaForm;
+        placa = vehicleDTO.getPlacaForm();
     }
 
     public Integer getId() {
@@ -39,5 +45,13 @@ public class Vehicle {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
     }
 }

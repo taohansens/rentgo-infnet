@@ -3,6 +3,9 @@ package br.edu.infnet.rentgo.entities;
 import br.edu.infnet.rentgo.dtos.ClientDTO;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 public class Client {
     @Id
@@ -22,6 +25,12 @@ public class Client {
     @OneToOne
     @JoinColumn(name = "credentialUser_id", referencedColumnName = "id")
     private CredentialUser credentialUser;
+
+    @OneToMany
+    @JoinTable(name = "tb_client_booking",
+            joinColumns = @JoinColumn(name = "client_id"),
+            inverseJoinColumns = @JoinColumn(name = "booking_id"))
+    private Set<Booking> bookings = new HashSet<>();
 
 
     public Client(Integer id, String name, String telefone, boolean isVerified, Document document, Address address, CredentialUser credentialUser) {

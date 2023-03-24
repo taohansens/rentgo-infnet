@@ -1,8 +1,10 @@
 package br.edu.infnet.rentgo.dtos;
 
 public class VehicleDTO {
-    public int idForm;
-    public String placaForm;
+    private int idForm;
+    private String placaForm;
+
+    private int idStoreForm;
 
     public VehicleDTO() {
     }
@@ -30,5 +32,13 @@ public class VehicleDTO {
 
     public void setPlacaForm(String placaForm) {
         this.placaForm = placaForm;
+    }
+
+    public int getIdStoreForm() {
+        return idStoreForm;
+    }
+
+    public void setIdStoreForm(int idStoreForm) {
+        this.idStoreForm = idStoreForm;
     }
 }
