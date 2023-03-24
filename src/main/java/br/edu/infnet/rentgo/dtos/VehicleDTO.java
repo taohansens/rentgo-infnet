@@ -5,6 +5,7 @@ public class VehicleDTO {
     private String placaForm;
 
     private int idStoreForm;
+    private String nameStoreForm;
 
     public VehicleDTO() {
     }
@@ -16,6 +17,13 @@ public class VehicleDTO {
     public VehicleDTO(int idForm, String placaForm) {
         this.idForm = idForm;
         this.placaForm = placaForm;
+    }
+
+    public VehicleDTO(int idForm, String placaForm, int idStoreForm, String nameStoreForm) {
+        this.idForm = idForm;
+        this.placaForm = placaForm;
+        this.idStoreForm = idStoreForm;
+        this.nameStoreForm = nameStoreForm;
     }
 
     public int getIdForm() {
@@ -40,5 +48,13 @@ public class VehicleDTO {
 
     public void setIdStoreForm(int idStoreForm) {
         this.idStoreForm = idStoreForm;
+    }
+
+    public String getNameStoreForm() {
+        return nameStoreForm;
+    }
+
+    public void setNameStoreForm(String nameStoreForm) {
+        this.nameStoreForm = nameStoreForm;
     }
 }

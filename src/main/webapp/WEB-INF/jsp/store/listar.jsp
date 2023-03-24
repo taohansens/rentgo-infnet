@@ -37,6 +37,8 @@
                 <th>Cidade</th>
                 <th>Estado</th>
                 <th>CEP</th>
+                <th>Carros</th>
+                <th>Qtd. de Carros</th>
             </tr>
             </thead>
             <tbody>
@@ -51,6 +53,8 @@
                     <td>${store.cidadeForm}</td>
                     <td>${store.estadoForm}</td>
                     <td>${store.cepForm}</td>
+                    <td>${store.vehicleDTOS}</td>
+                    <td>${store.vehicleDTOS.size()}</td>
                     <td><a href="/store/${store.idForm}/delete">Excluir</a></td>
                 </tr>
             </c:forEach>

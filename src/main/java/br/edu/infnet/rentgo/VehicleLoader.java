@@ -33,6 +33,7 @@ public class VehicleLoader implements ApplicationRunner {
                 while (linha != null) {
                     campos = linha.split(";");
                     VehicleDTO vehicleDTO = new VehicleDTO(campos[0]);
+                    vehicleDTO.setIdStoreForm(Integer.parseInt(campos[1]));
                     vehicleService.insert(vehicleDTO);
                     linha = leitura.readLine();
                 }

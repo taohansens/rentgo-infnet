@@ -2,6 +2,8 @@ package br.edu.infnet.rentgo.entities;
 
 import br.edu.infnet.rentgo.dtos.VehicleDTO;
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Vehicle {
@@ -11,6 +13,7 @@ public class Vehicle {
     private String placa;
 
     @ManyToOne
+    @JoinColumn(name = "store")
     private Store store;
 
     public Vehicle() {
@@ -53,5 +56,13 @@ public class Vehicle {
 
     public void setStore(Store store) {
         this.store = store;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", placa='" + placa + '\'' +
+                '}';
     }
 }

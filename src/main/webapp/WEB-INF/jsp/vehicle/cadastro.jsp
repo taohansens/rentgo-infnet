@@ -26,6 +26,19 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="idStoreForm">Selecione a Loja</label>
+                <select class="form-control" id="idStoreForm" name="idStoreForm">
+                    <c:if test="${empty storesAvailable}">
+                        <div class="alert alert-danger" role="alert">Nenhuma loja foi encontrada.</div>
+                    </c:if>
+                    <c:if test="${not empty storesAvailable}">
+                        <c:forEach var="store" items="${storesAvailable}">
+                            <option value="${store.idForm}">${store.nameForm}</option>
+                        </c:forEach>
+                    </c:if>
+                </select>
+            </div>
             <button class="mt-5 w-100 btn btn-success btn-lg" type="submit">Cadastrar</button>
         </form>
             <a class="mt-2 mb-2 w-100 btn btn-outline-dark btn-lg" href="/vehicle/listar">Voltar</a>

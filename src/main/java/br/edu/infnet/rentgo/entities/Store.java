@@ -2,9 +2,7 @@ package br.edu.infnet.rentgo.entities;
 import br.edu.infnet.rentgo.dtos.StoreDTO;
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Entity
@@ -16,22 +14,17 @@ public class Store {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-    @OneToMany
-    @JoinTable(name = "tb_store_vehicle",
-            joinColumns = @JoinColumn(name = "store_id"),
-            inverseJoinColumns = @JoinColumn(name = "vehicle_id"))
-    private Set<Vehicle> vehicles = new HashSet<>();
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @JoinColumn(name = "store")
+    private List<Vehicle> vehicles;
 
     @OneToMany
-    @JoinTable(name = "tb_store_booking",
-            joinColumns = @JoinColumn(name = "store_id"),
-            inverseJoinColumns = @JoinColumn(name = "booking_id"))
-    private Set<Booking> bookings = new HashSet<>();
+    private Set<Booking> bookings;
 
     public Store() {
     }
 
-    public Store(Integer id, String name, Address address, Set<Vehicle> vehicles) {
+    public Store(Integer id, String name, Address address, List<Vehicle> vehicles) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -42,7 +35,6 @@ public class Store {
         name = storeDTO.nameForm;
         address = new Address(storeDTO.cepForm, storeDTO.endForm, storeDTO.compForm, storeDTO.bairroForm,
                 storeDTO.cidadeForm, storeDTO.estadoForm);
-        vehicles = storeDTO.vehicleDTOS.stream().map(Vehicle::new).collect(Collectors.toSet());
     }
 
     public Integer getId() {
@@ -69,7 +61,7 @@ public class Store {
         this.address = address;
     }
 
-    public Set<Vehicle> getVehicles() {
+    public List<Vehicle> getVehicles() {
         return vehicles;
     }
 

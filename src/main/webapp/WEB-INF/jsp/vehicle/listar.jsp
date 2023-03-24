@@ -31,6 +31,7 @@
             <tr>
                 <th>ID</th>
                 <th>Placa</th>
+                <th>Loja</th>
             </tr>
             </thead>
             <tbody>
@@ -39,6 +40,7 @@
                 <tr>
                     <td>${vehicle.idForm}</td>
                     <td>${vehicle.placaForm}</td>
+                    <td>${vehicle.nameStoreForm}</td>
                     <td><a href="/vehicle/${vehicle.idForm}/delete">Excluir</a></td>
                 </tr>
             </c:forEach>
