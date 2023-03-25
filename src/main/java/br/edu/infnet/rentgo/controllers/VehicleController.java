@@ -1,6 +1,5 @@
 package br.edu.infnet.rentgo.controllers;
 
-import br.edu.infnet.rentgo.dtos.StoreDTO;
 import br.edu.infnet.rentgo.dtos.VehicleDTO;
 import br.edu.infnet.rentgo.services.StoreService;
 import br.edu.infnet.rentgo.services.VehicleService;

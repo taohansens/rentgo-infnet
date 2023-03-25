@@ -1,8 +1,6 @@
 package br.edu.infnet.rentgo.entities;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -10,8 +8,8 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private LocalDate date;
-    private LocalDate finalDate;
+    private String date;
+    private String finalDate;
     private double price;
     private boolean payed;
     private String info;
@@ -26,7 +24,7 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(Integer id, LocalDate date, LocalDate finalDate, double price, boolean payed, String info, Client client, Store store, Vehicle vehicle) {
+    public Booking(Integer id, String date, String finalDate, double price, boolean payed, String info, Client client, Store store, Vehicle vehicle) {
         this.id = id;
         this.date = date;
         this.finalDate = finalDate;
@@ -38,7 +36,7 @@ public class Booking {
         this.vehicle = vehicle;
     }
 
-    public Booking(Integer id, LocalDate date, LocalDate finalDate, double price, boolean payed, String info) {
+    public Booking(Integer id, String date, String finalDate, double price, boolean payed, String info) {
         this.id = id;
         this.date = date;
         this.finalDate = finalDate;
@@ -55,19 +53,19 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public LocalDate getFinalDate() {
+    public String getFinalDate() {
         return finalDate;
     }
 
-    public void setFinalDate(LocalDate finalDate) {
+    public void setFinalDate(String finalDate) {
         this.finalDate = finalDate;
     }
 

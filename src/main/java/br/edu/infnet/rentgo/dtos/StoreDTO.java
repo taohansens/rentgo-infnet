@@ -2,11 +2,7 @@ package br.edu.infnet.rentgo.dtos;
 
 
 import br.edu.infnet.rentgo.entities.Vehicle;
-
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class StoreDTO {
     public int idForm;

@@ -3,7 +3,6 @@ import br.edu.infnet.rentgo.dtos.StoreDTO;
 import jakarta.persistence.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Entity
 public class Store {

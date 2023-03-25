@@ -1,10 +1,8 @@
 package br.edu.infnet.rentgo.services;
 
 import br.edu.infnet.rentgo.dtos.StoreDTO;
-import br.edu.infnet.rentgo.dtos.VehicleDTO;
 import br.edu.infnet.rentgo.entities.Store;
 import br.edu.infnet.rentgo.repositories.StoreRepository;
-import br.edu.infnet.rentgo.repositories.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

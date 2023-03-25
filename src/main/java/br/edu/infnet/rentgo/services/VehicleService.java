@@ -5,7 +5,6 @@ import br.edu.infnet.rentgo.entities.Store;
 import br.edu.infnet.rentgo.entities.Vehicle;
 import br.edu.infnet.rentgo.repositories.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
