@@ -14,8 +14,7 @@ public class Store {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, orphanRemoval = true)
-    @JoinColumn(name = "store")
+    @OneToMany(mappedBy="store", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<Vehicle> vehicles;
 
     @OneToMany

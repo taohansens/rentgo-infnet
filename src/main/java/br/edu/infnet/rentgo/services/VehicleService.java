@@ -31,6 +31,7 @@ public class VehicleService {
     }
 
     public void delete(int id) {
-        repository.deleteById(id);
+        var vehicleBd = repository.findById(id);
+        vehicleBd.ifPresent(vehicle -> repository.delete(vehicle));
     }
 }

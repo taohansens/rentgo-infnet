@@ -12,8 +12,7 @@ public class Vehicle {
     private Integer id;
     private String placa;
 
-    @ManyToOne
-    @JoinColumn(name = "store")
+    @ManyToOne(optional = false)
     private Store store;
 
     public Vehicle() {
