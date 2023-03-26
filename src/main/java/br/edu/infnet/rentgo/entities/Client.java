@@ -55,6 +55,10 @@ public class Client {
     public Client() {
     }
 
+    public Client(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

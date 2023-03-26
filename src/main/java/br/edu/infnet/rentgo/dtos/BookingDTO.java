@@ -1,5 +1,7 @@
 package br.edu.infnet.rentgo.dtos;
 
+import br.edu.infnet.rentgo.entities.Vehicle;
+
 public class BookingDTO {
     public int idForm;
     public String dinicioForm;
@@ -38,6 +40,16 @@ public class BookingDTO {
         this.clientIdForm = clientIdForm;
         this.vehicleIdForm = vehicleIdForm;
         this.storeIdForm = storeIdForm;
+    }
+
+    public BookingDTO(Integer idForm, Integer clientIdForm, Integer vehicleIdForm, Integer storeIdForm) {
+        this.idForm = idForm;
+        this.clientIdForm = clientIdForm;
+        this.vehicleIdForm = vehicleIdForm;
+        this.storeIdForm = storeIdForm;
+    }
+
+    public BookingDTO() {
     }
 
     public int getIdForm() {

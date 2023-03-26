@@ -31,6 +31,10 @@ public class Vehicle {
         placa = vehicleDTO.getPlacaForm();
     }
 
+    public Vehicle(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

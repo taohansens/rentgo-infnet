@@ -1,5 +1,6 @@
 package br.edu.infnet.rentgo.entities;
 
+import br.edu.infnet.rentgo.dtos.BookingDTO;
 import jakarta.persistence.*;
 import java.util.Objects;
 
@@ -43,6 +44,15 @@ public class Booking {
         this.price = price;
         this.payed = payed;
         this.info = info;
+    }
+
+    public Booking(BookingDTO bookingDTO) {
+        this.id = bookingDTO.getIdForm();
+        this.date = bookingDTO.getDinicioForm();
+        this.finalDate = bookingDTO.getDfimForm();
+        this.price = Double.parseDouble(bookingDTO.getPriceForm());
+        this.payed = Boolean.parseBoolean(bookingDTO.getPaydForm());
+        this.info = bookingDTO.getInfoForm();
     }
 
     public Integer getId() {

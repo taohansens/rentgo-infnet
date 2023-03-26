@@ -35,6 +35,10 @@ public class Store {
                 storeDTO.cidadeForm, storeDTO.estadoForm);
     }
 
+    public Store(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
