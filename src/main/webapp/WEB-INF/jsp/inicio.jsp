@@ -14,11 +14,11 @@
     <c:import url="/WEB-INF/jsp/menu.jsp" />
     <main>
         <h1>RentGo. Reservas.</h1>
-        <p class="fs-5 col-md-8">Verifique o registro de clientes por aqui.</p>
+        <p class="fs-5 col-md-8">Verifique as reservas dos clientes por aqui.</p>
 
         <div class="mb-5">
-            <a href="/clientes/listar" class="btn btn-primary btn-lg px-4">Listar
-                Clientes</a>
+            <a href="/booking/listar" class="btn btn-primary btn-lg px-4">Listar
+                Reservas</a>
         </div>
 
         <hr class="col-3 col-md-2 mb-5">

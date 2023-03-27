@@ -20,7 +20,10 @@ public class BookingService {
 
     public List<BookingDTO> getAll() {
         Collection<Booking> list = (Collection<Booking>) repository.findAll();
-        return list.stream().map(x -> new BookingDTO(x.getId(), x.getDate(), x.getFinalDate(), String.valueOf(x.getPrice()), String.valueOf(x.isPayed()), x.getInfo(), x.getClient().getId(), x.getVehicle().getId(), x.getStore().getId())).toList();
+        return list.stream().map(x -> new BookingDTO(x.getId(), x.getDate(), x.getFinalDate(), String.valueOf(x.getPrice()),
+                String.valueOf(x.isPayed()), x.getInfo(), x.getClient().getId(), x.getClient().getDocument().getCpf(),
+                x.getClient().getName(), x.getVehicle().getId(), x.getVehicle().getPlaca(), x.getStore().getId(),
+                x.getStore().getName())).toList();
     }
 
     public BookingDTO insert(BookingDTO bookingDTO) {

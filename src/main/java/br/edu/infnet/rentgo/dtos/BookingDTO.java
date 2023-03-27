@@ -42,6 +42,24 @@ public class BookingDTO {
         this.storeIdForm = storeIdForm;
     }
 
+    public BookingDTO(int idForm, String dinicioForm, String dfimForm, String priceForm, String paydForm,
+                      String infoForm, int clientIdForm, String clientCPFForm, String clientNameForm,
+                      int vehicleIdForm, String vehiclePlacaForm, int storeIdForm, String storeNameForm) {
+        this.idForm = idForm;
+        this.dinicioForm = dinicioForm;
+        this.dfimForm = dfimForm;
+        this.priceForm = priceForm;
+        this.paydForm = paydForm;
+        this.infoForm = infoForm;
+        this.clientIdForm = clientIdForm;
+        this.clientCPFForm = clientCPFForm;
+        this.clientNameForm = clientNameForm;
+        this.vehicleIdForm = vehicleIdForm;
+        this.vehiclePlacaForm = vehiclePlacaForm;
+        this.storeIdForm = storeIdForm;
+        this.storeNameForm = storeNameForm;
+    }
+
     public BookingDTO(Integer idForm, Integer clientIdForm, Integer vehicleIdForm, Integer storeIdForm) {
         this.idForm = idForm;
         this.clientIdForm = clientIdForm;

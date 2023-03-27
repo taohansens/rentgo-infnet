@@ -30,6 +30,7 @@
             <thead>
             <tr>
                 <th>ID Reserva</th>
+                <th>ID Loja</th>
                 <th>Loja</th>
                 <th>Cliente ID</th>
                 <th>Cliente</th>
@@ -49,6 +50,7 @@
                 <tr>
                     <td>${booking.idForm}</td>
                     <td>${booking.storeIdForm}</td>
+                    <td>${booking.storeNameForm}</td>
                     <td>${booking.clientIdForm}</td>
                     <td>${booking.clientNameForm}</td>
                     <td>${booking.clientCPFForm}</td>

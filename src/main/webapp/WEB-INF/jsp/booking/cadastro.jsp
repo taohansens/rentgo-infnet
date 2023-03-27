@@ -92,7 +92,7 @@
         <div class="row g-3">
             <div class="col-6">
                 <label for="infoForm" class="form-label">Informações Adicionais</label>
-                <input type="date" class="form-control" id="infoForm" name="infoForm" placeholder="Informações" value="" required>
+                <input type="text" class="form-control" id="infoForm" name="infoForm" placeholder="Informações" value="" required>
                 <div class="invalid-feedback">
                     Esse campo precisa estar preenchido.
                 </div>
